@@ -3,10 +3,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 const config = require('./config/environment');
+const neo = require('./databases/neo');
 
 const app = express();
 
 mongoose.Promise = global.Promise;
+
+neo.createConstraints();
 
 app.use(bodyParser.json());
 

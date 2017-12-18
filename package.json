@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "SET NODE_ENV=test&& nodemon --exec mocha --recursive -R min",
-    "start" : "nodemon server"
+    "start": "nodemon server"
   },
   "repository": {
     "type": "git",
