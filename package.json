@@ -1,0 +1,29 @@
+{
+  "name": "sportunitebackend",
+  "version": "1.0.0",
+  "description": "Backend Node API for SportUnite user accounts",
+  "main": "server.js",
+  "scripts": {
+    "test": "SET NODE_ENV=test&& nodemon --exec mocha --recursive -R min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamjong/SportUniteBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mamjong/SportUniteBackend/issues"
+  },
+  "homepage": "https://github.com/mamjong/SportUniteBackend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.7",
+    "neo4j-driver": "^1.5.1"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "supertest": "^3.0.0"
+  }
+}
