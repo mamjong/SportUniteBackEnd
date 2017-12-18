@@ -41,7 +41,7 @@ module.exports = {
 
 		session.run(
 			"MERGE (user:User {username: {userUsername}, name: {userName}, age: {userAge}, email: {userEmail}, " +
-			"timestamp: timestamp()}) " +
+			"createdOn: timestamp()}) " +
 			"MERGE (city:City {name: {cityName}}) " +
 			"MERGE (user)-[:LIVES_IN]->(city) " +
 			"RETURN user, city",
@@ -69,7 +69,8 @@ module.exports = {
 		session.run(
 			"MATCH (user:User {username: {userUsername}})-[rel:LIVES_IN]->() " +
 			"DELETE rel " +
-			"SET user.username = {userUsername}, user.name = {userName}, user.age = {userAge}, user.email = {userEmail} " +
+			"SET user.username = {userUsername}, user.name = {userName}, user.age = {userAge}, user.email = {userEmail}," +
+			"user.lastUpdatedOn = timestamp() " +
 			"MERGE (user)-[:LIVES_IN]->(city:City {name: {cityName}}) " +
 			"RETURN user, city",
 			{
