@@ -1,4 +1,4 @@
-const neo = require('./databases/neo.js');
+const neo = require('../databases/neo.js');
 
 module.exports = {
 
