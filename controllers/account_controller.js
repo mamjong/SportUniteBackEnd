@@ -46,11 +46,11 @@ module.exports = {
 			"MERGE (user)-[:LIVES_IN]->(city) " +
 			"RETURN user, city",
 			{
-				userUsername: "H4RDC0DED",
-				userName: "Hardcoded Harry",
-				userAge: "26",
-				userEmail: "email@email.com",
-				cityName: "New York",
+				userUsername: req.body.username,
+				userName: req.body.name,
+				userAge: req.body.age,
+				userEmail: req.body.email,
+				cityName: req.body.city
 			})
 			.then((result) => {
 				session.close();
