@@ -4,7 +4,8 @@
   "description": "Backend Node API for SportUnite user accounts",
   "main": "server.js",
   "scripts": {
-    "test": "SET NODE_ENV=test&& nodemon --exec mocha --recursive -R min"
+    "test": "SET NODE_ENV=test&& nodemon --exec mocha --recursive -R min",
+    "start": "nodemon server"
   },
   "repository": {
     "type": "git",
