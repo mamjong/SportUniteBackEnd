@@ -21,7 +21,8 @@ module.exports = {
 	login(req, res, next) {
 
 		user = req.body;
-		let query = neo.run(
+        const session = neo.session();
+		let query = session.run(
 			'match (n:User{username: $username})' +
 			'return n',
 			{username: user.username}
@@ -29,7 +30,7 @@ module.exports = {
 
 		query
 			.then((userDB) => {
-				if(userDB.password === user.password){
+				if(userDB.records[0]._fields[0].properties.password === user.password){
 					res.status(200).json({authorized: true});
 				}else{
                     res.status(401).json({authorized: false});
